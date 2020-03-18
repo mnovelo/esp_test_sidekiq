@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blasts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Recipients</th>
+      <th>Send at</th>
+      <th>Delivery attempts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blasts.each do |blast| %>
+      <tr>
+        <td><%= blast.message_id %></td>
+        <td><%= blast.recipients %></td>
+        <td><%= blast.send_at %></td>
+        <td><%= blast.delivery_attempts %></td>
+        <td><%= link_to 'Show', blast %></td>
+        <td><%= link_to 'Edit', edit_blast_path(blast) %></td>
+        <td><%= link_to 'Destroy', blast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blast', new_blast_path %>

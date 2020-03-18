@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @blast.message_id %>
+</p>
+
+<p>
+  <strong>Recipients:</strong>
+  <%= @blast.recipients %>
+</p>
+
+<p>
+  <strong>Send at:</strong>
+  <%= @blast.send_at %>
+</p>
+
+<p>
+  <strong>Delivery attempts:</strong>
+  <%= @blast.delivery_attempts %>
+</p>
+
+<%= link_to 'Edit', edit_blast_path(@blast) %> |
+<%= link_to 'Back', blasts_path %>
