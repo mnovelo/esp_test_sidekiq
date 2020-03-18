@@ -1,0 +1,79 @@
+require: rubocop-rails
+
+Naming/FileName:
+  # When `true`, requires that each source file should define a class or module
+  # with a name which matches the file name (converted to ... case).
+  # It further expects it to be nested inside modules which match the names
+  # of subdirectories in its path.
+  ExpectMatchingDefinition: true
+  AllowedAcronyms: []
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - test/**/*
+
+Layout/IndentationConsistency:
+  # The difference between `rails` and `normal` is that the `rails` style
+  # prescribes that in classes and modules the `protected` and `private`
+  # modifier keywords shall be indented the same as public methods and that
+  # protected and private members shall be indented one step more than the
+  # modifiers. Other than that, both styles mean that entities on the same
+  # logical depth shall have the same indentation.
+  EnforcedStyle: indented_internal_methods
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Security/YAMLLoad:
+  Enabled: false
+
+Naming/MethodName:
+  Enabled: false
+
+Layout/TrailingEmptyLines:
+  Enabled: false
+
+Layout/MultilineBlockLayout:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/TrivialAccessors:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - test/**/*
