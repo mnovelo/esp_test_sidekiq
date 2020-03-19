@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_160854) do
     t.bigint "message_id", null: false
     t.jsonb "recipients"
     t.datetime "send_at"
-    t.integer "delivery_attempts"
+    t.integer "delivery_attempts", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["message_id"], name: "index_blasts_on_message_id"

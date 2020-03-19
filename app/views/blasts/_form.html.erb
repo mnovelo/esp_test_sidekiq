@@ -13,22 +13,17 @@
 
   <div class="field">
     <%= form.label :message_id %>
-    <%= form.text_field :message_id %>
+    <%= form.collection_select(:message_id, Message.all, :id, :title) %>
   </div>
 
   <div class="field">
     <%= form.label :recipients %>
-    <%= form.text_field :recipients %>
+    <%= form.select(:recipients, [['Students', 'students'], ['Parents', 'parents']], { include_hidden: false }, multiple: true ) %>
   </div>
 
   <div class="field">
     <%= form.label :send_at %>
     <%= form.datetime_select :send_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :delivery_attempts %>
-    <%= form.number_field :delivery_attempts %>
   </div>
 
   <div class="actions">

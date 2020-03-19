@@ -4,7 +4,7 @@ class CreateBlasts < ActiveRecord::Migration[6.0]
       t.references :message, null: false, foreign_key: true
       t.jsonb :recipients
       t.timestamp :send_at
-      t.integer :delivery_attempts
+      t.integer :delivery_attempts, null: false, default: 0
 
       t.timestamps
     end

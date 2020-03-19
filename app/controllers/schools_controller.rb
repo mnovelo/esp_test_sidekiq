@@ -1,10 +1,19 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
+  # GET /
+  def home
+    school_subdomain = Apartment::Tenant.current
+    Apartment::Tenant.switch('public') do
+      @school = School.where(subdomain: school_subdomain).first
+    end
+  end
+
   # GET /schools
   # GET /schools.json
   def index
     @schools = School.all
+    @url_protocol, @base_domain = request.base_url.split('//')
   end
 
   # GET /schools/1

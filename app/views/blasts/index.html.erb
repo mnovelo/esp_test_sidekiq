@@ -16,13 +16,14 @@
   <tbody>
     <% @blasts.each do |blast| %>
       <tr>
-        <td><%= blast.message_id %></td>
+        <td><%= link_to blast.message_id, message_path(blast.message_id) %></td>
         <td><%= blast.recipients %></td>
         <td><%= blast.send_at %></td>
         <td><%= blast.delivery_attempts %></td>
         <td><%= link_to 'Show', blast %></td>
-        <td><%= link_to 'Edit', edit_blast_path(blast) %></td>
-        <td><%= link_to 'Destroy', blast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Render', "/rails/mailers/blast_mailer/email_blast.html?blast=#{blast.id}" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -31,3 +32,6 @@
 <br>
 
 <%= link_to 'New Blast', new_blast_path %>
+<br/>
+<br/>
+<%= link_to 'Home', root_path %>

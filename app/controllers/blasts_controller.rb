@@ -69,6 +69,6 @@ class BlastsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blast_params
-      params.require(:blast).permit(:message_id, :recipients, :send_at, :delivery_attempts)
+      params.require(:blast).permit(:message_id, :send_at, recipients: [])
     end
 end

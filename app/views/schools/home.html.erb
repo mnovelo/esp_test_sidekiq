@@ -1,0 +1,10 @@
+<h1>Welcome to <%= @school.name %></h1>
+<br/>
+<h2>Directory</h2>
+<ul>
+  <li><%= link_to 'Staff', users_path %></li>
+  <li><%= link_to 'Parents', parents_path %></li>
+  <li><%= link_to 'Students', students_path %></li>
+  <li><%= link_to 'Email Templates', messages_path %></li>
+  <li><%= link_to 'Send Email Blast', blasts_path %></li>
+</ul>
